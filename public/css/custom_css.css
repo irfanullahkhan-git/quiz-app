@@ -1,0 +1,53 @@
+.image-container {
+    background-image: url('/clg_bg.jpg'); /* Replace 'your-image.jpg' with the path to your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+}
+
+/* Media Query for Desktop */
+@media (min-width: 768px) {
+    .image-container {
+        background-size: auto;
+        background-position: initial;
+        height: auto;
+    }
+}
+
+
+.lds-hourglass {
+    display: inline-block;
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    top: 30%;
+    left: 35%;
+}
+.lds-hourglass:after {
+    content: " ";
+    display: block;
+    border-radius: 50%;
+    width: 110px;
+    height: 110px;
+    margin: 8px;
+    box-sizing: border-box;
+    border: 32px solid #fff;
+    /* border-color: #ff0a0a transparent #06e0f6 transparent; */
+    border-color: #fff transparent #fff transparent;
+    animation: lds-hourglass 2.2s infinite;
+}
+@keyframes lds-hourglass {
+    0% {
+        transform: rotate(0);
+        animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    }
+    50% {
+        transform: rotate(900deg);
+        animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+    100% {
+        transform: rotate(1800deg);
+    }
+}

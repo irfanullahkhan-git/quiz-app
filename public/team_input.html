@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Team Page</title>
+<style>
+body {
+    font-family: 'Arial', sans-serif;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    text-align: center;
+}
+
+label {
+    font-size: 1.2em;
+    margin-right: 10px;
+}
+
+input {
+    padding: 5px;
+    font-size: 1em;
+}
+
+button {
+    padding: 8px 15px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+</style>
+<script>
+function goToBuzzerPage() {
+    var teamName = document.getElementById('teamName').value;
+
+    if (teamName.trim() !== "") {
+        // Navigate to buzzer page with the team parameter
+        window.location.href = '/buzzer/' + encodeURIComponent(teamName);
+    } else {
+        alert('Please enter a team name.');
+    }
+}
+</script>
+</head>
+<body>
+    <div class="container">
+        <form>
+            <label for="teamName">Team Name:</label>
+            <input type="text" id="teamName" placeholder="Enter team name">
+            <button type="button" onclick="goToBuzzerPage()">Go to Buzzer</button>
+        </form>
+    </div>
+</body>
+</html>

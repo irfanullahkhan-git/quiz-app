@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        input, button {
+            margin-bottom: 10px;
+        }
+
+        .team-row {
+            margin-bottom: 5px;
+        }
+    </style>
+    <title>Team Score Tracker</title>
+</head>
+<body>
+
+    <h1>Team Score Tracker</h1>
+
+    <div id="teamsContainer">
+        <!-- Teams will be dynamically added here -->
+    </div>
+
+    <button onclick="addTeam()">Add Team</button>
+    <button onclick="generateJson()">Generate JSON</button>
+
+    <h2>Generated JSON:</h2>
+    <pre id="jsonOutput"></pre>
+
+    <script>
+        let teamsData = [];
+
+        function addTeam() {
+            const teamsContainer = document.getElementById('teamsContainer');
+
+            const teamRow = document.createElement('div');
+            teamRow.classList.add('team-row');
+
+            const teamNameInput = document.createElement('input');
+            teamNameInput.type = 'text';
+            teamNameInput.placeholder = 'Enter team name';
+
+            const teamScoreInput = document.createElement('input');
+            teamScoreInput.type = 'number';
+            teamScoreInput.placeholder = 'Enter team score';
+
+            teamRow.appendChild(teamNameInput);
+            teamRow.appendChild(teamScoreInput);
+
+            teamsContainer.appendChild(teamRow);
+
+            // Clear input fields
+            teamNameInput.value = '';
+            teamScoreInput.value = '';
+        }
+
+        function generateJson() {
+            const teamsContainer = document.getElementById('teamsContainer');
+            const teamRows = teamsContainer.getElementsByClassName('team-row');
+
+            teamsData = [];
+
+            for (const row of teamRows) {
+                const inputs = row.getElementsByTagName('input');
+                const team = {
+                    team: inputs[0].value,
+                    score: inputs[1].value
+                };
+                teamsData.push(team);
+            }
+
+            updateJsonOutput();
+        }
+
+        function updateJsonOutput() {
+            const jsonOutput = document.getElementById('jsonOutput');
+            jsonOutput.textContent = JSON.stringify(teamsData, null, 2);
+        }
+    </script>
+
+</body>
+</html>
