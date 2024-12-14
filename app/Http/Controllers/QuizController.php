@@ -201,7 +201,7 @@ class QuizController extends Controller
     {
         $request->validate([
             'scores' => 'required|array',
-            'scores.*' => 'integer|min:0',
+            'scores.*' => 'integer',
         ]);
 
         foreach ($request->scores as $teamId => $score) {
