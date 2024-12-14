@@ -6,7 +6,6 @@ use App\Models\Buzzer;
 use App\Models\Team;
 use App\Models\Game;
 use Illuminate\Support\Facades\DB;
-use Pusher\Pusher;
 use Illuminate\Support\Facades\Session;
 
 class QuizController extends Controller
@@ -68,10 +67,17 @@ class QuizController extends Controller
         // Fetch team names and scores from the Buzzers table
         $buzzers = DB::table('buzzers')->select('team_name')->get();
 
+        $latestScoreData = DB::table('score_data')
+        ->orderBy('id', 'desc')
+        ->first();
+
         // Prepare data for JSON response
         $data = [
             'teamNames' => $buzzers->pluck('team_name')->toArray(),
         ];
+        if ($latestScoreData) {
+            $data['latestScoreData'] = json_decode($latestScoreData->score_json, true);
+        }
 
         return response()->json($data);
     }
@@ -208,30 +214,15 @@ class QuizController extends Controller
                 'score' => $team->pivot->score,
             ];
         });
-    
-        $options = [
-            'cluster' => config('broadcasting.connections.pusher.options.cluster'),
-            'useTLS' => true,
-            'curl_options' => [
-                CURLOPT_SSL_VERIFYHOST => 0,
-                CURLOPT_SSL_VERIFYPEER => 0,
-            ],
-        ];
-       
 
-        $pusher = new Pusher(
-            config('broadcasting.connections.pusher.key'),
-            config('broadcasting.connections.pusher.secret'),
-            config('broadcasting.connections.pusher.app_id'),
-            $options
+        $scoreJson = json_encode($updatedTeams);
+
+        // Check if a record already exists, and update or insert accordingly
+        \DB::table('score_data')->updateOrInsert(
+            ['id' => $match->id], // Match ID or a unique identifier
+            ['score_json' => $scoreJson]
         );
     
-        try {
-            $pusher->trigger('my-channel', 'my-event', $updatedTeams);
-        } catch (\Exception $e) {
-            \Log::error('Pusher Error: ' . $e->getMessage());
-        }
-
         return redirect()->back()->with('success', 'Scores updated successfully.');
     }
 

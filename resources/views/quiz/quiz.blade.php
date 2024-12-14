@@ -14,7 +14,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Quiz</title>
-    <script src="https://js.pusher.com/8.2.0/pusher.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <style>
         /* body {
@@ -314,6 +313,23 @@
                             scoreCell.textContent = "";
                         });
                         $(".buzzers").html(table);
+
+                        const score_table = document.createElement('table');
+
+                        // Loop through JSON data and create rows
+                        data.latestScoreData.forEach(entry => {
+                            const row = score_table.insertRow();
+
+                            const teamCell = row.insertCell(0);
+                            teamCell.className = 'team_name';
+                            teamCell.textContent = entry.team;
+
+                            const score_row = score_table.insertRow();
+                            const scoreCell = score_row.insertCell(0);
+                            scoreCell.className = 'team_score';
+                            scoreCell.textContent = entry.score;
+                        });
+                        $(".scoreboard").html(score_table);
                     })
                     .catch(error => {
                         console.error('Error fetching data:', error);
@@ -323,7 +339,7 @@
             // Fetch data and update HTML initially
 
             // Set up an interval to fetch data and update HTML every 2 seconds
-            setInterval(fetchDataAndUpdateHtml, 5000);
+            setInterval(fetchDataAndUpdateHtml, 2000);
         }
 
 // Call the function to start listening for updates
@@ -362,43 +378,14 @@ function deleteAllBuzzers() {
 }
 
 // Call the function when needed, for example, when a button is clicked
-document.getElementById('deleteButton').addEventListener('click', deleteAllBuzzers);
 
     </script>
 
     <script>
-        // Enable pusher logging - don't include this in production
-        Pusher.logToConsole = true;
-
-        var pusher = new Pusher('7730addda851730d3c76', {
-            cluster: 'ap2'
-        });
-
-        var channel = pusher.subscribe('my-channel');
-        channel.bind('my-event', function(jsonData) {
-            console.log(jsonData);
-            const header = "<h1>Score</h1>"
-            const table = document.createElement('table');
-
-            // Loop through JSON data and create rows
-            jsonData.forEach(entry => {
-                const row = table.insertRow();
-
-                const teamCell = row.insertCell(0);
-                teamCell.className = 'team_name';
-                teamCell.textContent = entry.team;
-
-                const score_row = table.insertRow();
-                const scoreCell = score_row.insertCell(0);
-                scoreCell.className = 'team_score';
-                scoreCell.textContent = entry.score;
-            });
-            $(".scoreboard").html(table);
-        });
         function playSound(filename) {
-    const audio = new Audio(`/public/${filename}`);
-    audio.play();
-}
+            const audio = new Audio(`/${filename}`);
+            audio.play();
+        }
 
 // Function to display celebration effect for correct answers
 function displayCelebration() {
@@ -415,7 +402,7 @@ function displayCelebration() {
     document.body.appendChild(confettiContainer);
 
     // Use a confetti library or simple effect
-    for (let i = 0; i < 250; i++) {
+    for (let i = 0; i < 300; i++) {
         const confetti = document.createElement('div');
         confetti.className = 'confetti';
         confetti.style.position = 'absolute';
