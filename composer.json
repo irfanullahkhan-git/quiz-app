@@ -12,8 +12,6 @@
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.4",
-        "maatwebsite/excel": "^1.1",
-        "phpoffice/phpspreadsheet": "^1.12",
         "pusher/pusher-php-server": "5.0",
         "vinkla/hashids": "^9.1"
     },
