@@ -144,6 +144,19 @@
 
         .buzzers .team_name{padding: 10px;}
         .buzzers table{width: 80%}
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-100%) rotate(0deg);
+            }
+            100% {
+                transform: translateY(100vh) rotate(720deg);
+            }
+        }
+
+        .confetti {
+            border-radius: 50%;
+        }
     </style>
 </head>
 <body>
@@ -218,20 +231,28 @@
         // Function to check the selected answer
         function checkAnswer() {
             $(".option").removeClass("correct wrong");
-
+            document.body.style.transition = "background-color 0.3s";
             if (selectedOption === null) {
                 return;
             }
 
             if (question.correct_option === option_numbers[selectedOption]) {
                 $(".selected").addClass("correct");
+                document.body.style.backgroundColor = "#00FF00"; // Green for correct
+                playSound("correct.mp3");
+                displayCelebration();
                 $("#correctBtn").hide();
             } else {
                 $(".selected").addClass("wrong");
+                document.body.style.backgroundColor = "#FF1616"; // Red for wrong
+                playSound("wrong.mp3");
                 $("#correctBtn").show();
             }
 
             $("#nextBtn").show();
+            setTimeout(() => {
+                document.body.style.backgroundColor = "#FFFFFF";
+            }, 2000);
         }
 
         function showCorrect(){
@@ -374,6 +395,48 @@ document.getElementById('deleteButton').addEventListener('click', deleteAllBuzze
             });
             $(".scoreboard").html(table);
         });
-    </script>
+        function playSound(filename) {
+    const audio = new Audio(`/public/${filename}`);
+    audio.play();
+}
+
+// Function to display celebration effect for correct answers
+function displayCelebration() {
+    // Add popper effect
+    const confettiContainer = document.createElement('div');
+    confettiContainer.id = 'confetti-container';
+    confettiContainer.style.position = 'fixed';
+    confettiContainer.style.top = '0';
+    confettiContainer.style.left = '0';
+    confettiContainer.style.width = '100%';
+    confettiContainer.style.height = '100%';
+    confettiContainer.style.zIndex = '1000';
+    confettiContainer.style.pointerEvents = 'none';
+    document.body.appendChild(confettiContainer);
+
+    // Use a confetti library or simple effect
+    for (let i = 0; i < 250; i++) {
+        const confetti = document.createElement('div');
+        confetti.className = 'confetti';
+        confetti.style.position = 'absolute';
+        confetti.style.width = '20px';
+        confetti.style.height = '20px';
+        confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+        confetti.style.left = `${Math.random() * 100}%`;
+        confetti.style.animation = `fall ${Math.random() * 2 + 3}s ease-in-out`;
+        confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+        confettiContainer.appendChild(confetti);
+    }
+
+    setTimeout(() => {
+        confettiContainer.remove();
+    }, 4000); // Remove confetti after 4 seconds
+}
+
+
+
+</script>
+
+
 </body>
 </html>
