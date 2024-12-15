@@ -1,3 +1,6 @@
+@extends('quiz.layout')
+
+@section('content')
 <h1>Select a Match</h1>
 <form id="game-form">
     <label for="games">Select Game:</label>
@@ -52,3 +55,4 @@
         });
     });
 </script>
+@endsection
