@@ -40,6 +40,7 @@
             border: 2px solid #00060f;
             color: #00060f;
             border-radius: 5px;
+            text-align: center;
         }
         .option-container {
             display: flex;
