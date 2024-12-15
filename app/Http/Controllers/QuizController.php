@@ -18,7 +18,7 @@ class QuizController extends Controller
                                 ->where('type', $type)
                                 ->inRandomOrder()
                                 ->first();
-
+        
         return view('quiz.quiz', compact('question'));
     }
 

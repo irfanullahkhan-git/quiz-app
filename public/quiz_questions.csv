@@ -1,0 +1,79 @@
+﻿Question,Option A,Option B,Option C,Option D,Correct Option
+Which of the following is an example of communication technology?,Television,Radio,Mobile Phones,All of the above,D
+Which type of signal is used in analog communication?,Binary,Continuous,Discrete,Digital,B
+What is the frequency range of Wi-Fi (802.11)?,2.4 GHz & 5 GHz,1.2 GHz & 2.4 GHz,5.8 GHz only,700 MHz,A
+Which device connects different networks and routes data between them?,Switch,Router,Modem,Hub,B
+What is the full form of SMS?,Short Messaging System,Simple Mail Service,Short Message Service,Simple Messaging System,C
+Fiber optic cables transmit data using:,Electrical signals,Radio waves,Light signals,Magnetic fields,C
+Which communication protocol is commonly used for email?,HTTP,SMTP,FTP,IP,B
+"In communication systems, bandwidth is measured in:",Hertz,Joules,Decibels,Meters,A
+The process of sending multiple signals over a single communication channel is called:,Modulation,Multiplexing,Encoding,Decoding,B
+Which technology is used in mobile communication for high-speed internet?,GSM,4G LTE,CDMA,AM/FM,B
+Which of the following is NOT a wireless communication method?,Wi-Fi,Ethernet,Bluetooth,Infrared,B
+Which layer of the OSI model is responsible for routing?,Physical,Data Link,Network,Application,C
+Bluetooth technology operates in which frequency band?,2.4 GHz,5 GHz,900 MHz,3.5 GHz,A
+Which of the following is an example of simplex communication?,Telephone,Television,Walkie-Talkie,Video Call,B
+What type of network topology connects all devices to a central hub?,Star,Bus,Ring,Mesh,A
+Which of the following is NOT a guided transmission medium?,Coaxial cable,Fiber optic cable,Twisted pair cable,Radio waves,D
+Which communication technology is primarily used for mobile phone networks?,LTE,DSL,Satellite,Fiber optics,A
+"What does ""HTTP"" stand for?",Hyper Text Protocol,Hyper Transfer Protocol,High Transmission Protocol,None of these,D
+Which device is used to regenerate and amplify signals in a network?,Switch,Repeater,Router,Modem,B
+Which type of communication occurs in both directions but only one direction at a time?,Simplex,Full Duplex,Half Duplex,Multiplex,C
+Which protocol is used for secure communication over the internet?,HTTP,HTTPS,FTP,SMTP,B
+Which of the following devices can connect multiple networks?,Switch,Router,Hub,Repeater,B
+What does ISP stand for in communication technology?,Internal System Protocol,Internet Service Provider,Integrated System Protocol,Internet Signal Provider,B
+Which of the following is an unguided communication medium?,Twisted pair,Coaxial cable,Microwave,Fiber optics,C
+Which technology is used for contactless payments?,NFC,Ethernet,DSL,Bluetooth,A
+What type of signal is used in digital communication?,Sine wave,Discrete signals,Analog signals,Continuous signals,B
+Which network topology is most resilient to failure?,Star,Ring,Mesh,Bus,C
+What is the maximum data rate of 5G technology?,1 Mbps,10 Mbps,1 Gbps,10 Gbps,D
+"What does the term ""packet switching"" mean?",Continuous flow of data,Multiplexing of signals,Parallel data transmission,None of these,D
+What does LTE stand for?,Long Time Evolution,Low Transmission Efficiency,Long Term Evolution,Linear Transmission Error,C
+What is the smallest unit of data?,Word,Nibble,Byte,Bit,D
+What does LAN stand for?,Local Area Network,Logical Area Network,Linear Area Network,Low Area Network,A
+What is the purpose of a router?,Switching,Filtering,Amplifying,Routing,D
+What does IP stand for?,Internal Protocol,Internet Protocol,Internet Process,Integrated Protocol,B
+Which network has the largest coverage?,LAN,WAN,MAN,PAN,B
+What does SMTP handle?,Emails,Files,Web pages,Videos,A
+Which cable supports high-speed data?,Twisted Pair,Coaxial,Fiber Optic,Ethernet,C
+What does FTP transfer?,Files,Emails,Videos,Signals,A
+What is a public IP address used for?,Internal networking,Global communication,Data encryption,Domain translation,B
+Which device divides bandwidth among devices?,Router,Switch,Hub,Modem,B
+What does VPN provide?,Privacy,Bandwidth,Speed,Addressing,A
+Which signal type is continuous?,Digital,Analog,Binary,Discrete,B
+What does WAP stand for?,Web Application Platform,Wide Area Protocol,Wireless Access Point,Wireless Application Process,C
+What does 4G stand for?,Four Gates,Fast Generation,Four Gigabytes,Fourth Generation,D
+What is used for one-to-many communication?,Unicast,Multicast,Broadcast,Anycast,C
+Which protocol works without connection?,UDP,TCP,FTP,HTTP,A
+What is the maximum length of IPv6?,32 bits,64 bits,128 bits,256 bits,C
+What is the primary function of a switch?,Routing,Forwarding packets,Modulation,Amplification,B
+What is the role of an access point?,Signal transmission,Wireless connectivity,IP addressing,Data routing,B
+Which protocol is used for secure web browsing?,HTTPS,FTP,POP,IMAP,A
+What is the role of a gateway?,Protocol translation,Data encryption,Signal amplification,IP assignment,A
+What type of address is 192.168.0.1?,Public,Private,Loopback,Broadcast,B
+What defines maximum data capacity?,Bandwidth,Jitter,Latency,Throughput,A
+Which layer uses frames in OSI?,Transport,Data Link,Network,Physical,B
+What does a proxy server provide?,Anonymity,Bandwidth,Encryption,Routing,A
+What ensures secure VPN connections?,Encryption,Compression,Routing,Amplification,A
+What does a subnet mask define?,Data rate,IP allocation,Network size,Packet loss,C
+What does IEEE 802.11 define?,Ethernet,Wi-Fi,Bluetooth,Fiber optics,B
+Which signal has discrete values?,Analog,Digital,Modulated,Amplified,B
+What measures signal strength?,Decibels,Hertz,Bandwidth,Throughput,A
+What does QoS prioritize?,Critical data,Bandwidth usage,IP allocation,Signal modulation,A
+What layer establishes end-to-end connections?,Transport,Network,Data Link,Session,A
+What is the brain of the computer?,RAM,ROM,SSD,None of these,D
+What does GUI stand for?,Graphical User Interface,General Utility Input,Graphical Utility Interface,General User Input,A
+Which memory is non-volatile?,RAM,Cache,ROM,Register,C
+What converts code into machine language?,Assembler,Compiler,Debugger,None of these,B
+What type of device is a keyboard?,Input,Output,Processing,Storage,A
+Which port is used for printers?,USB,Parallel,HDMI,Ethernet,B
+What is 1 Kilobyte in bytes?,1000,1024,2048,512,B
+Which component stores instructions temporarily?,RAM,ROM,SSD,Hard Disk,A
+What does SSD stand for?,Solid Storage Device,Solid State Drive,System Storage Device,Static State Disk,B
+What type of software is an OS?,System,Application,Utility,Middleware,A
+What is the purpose of an IP address?,Data encryption,Device identification,Virus detection,Network topology,B
+Which unit controls arithmetic operations?,ALU,CU,Register,RAM,A
+Which output device displays visuals?,Printer,Monitor,Speaker,Scanner,B
+Which memory is fastest?,RAM,Cache,Hard Disk,SSD,B
+What is the default file extension for Excel?,.txt,.ppt,.xls,.exl,C
+What is the default operating system in most laptops?,Linux,macOS,Windows,Android,C
