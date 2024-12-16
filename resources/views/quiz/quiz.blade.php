@@ -217,7 +217,7 @@
 
             $("#question-container").html(optionsHtml);
             $("#checkBtn").prop("disabled", true);
-            $("#nextBtn").show();
+            $("#nextBtn").hide();
             $("#correctBtn").hide();
         }
 
