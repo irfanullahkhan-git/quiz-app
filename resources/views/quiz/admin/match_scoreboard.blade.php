@@ -18,7 +18,7 @@
             <tr>
                 <td>{{ $team->name }}</td>
                 <td>
-                    <input type="number" name="scores[{{ $team->id }}]" 
+                    <input type="number" step="10" name="scores[{{ $team->id }}]" 
                            value="{{ old('scores.' . $team->id, $team->pivot->score) }}" 
                            class="form-control" required>
                 </td>
